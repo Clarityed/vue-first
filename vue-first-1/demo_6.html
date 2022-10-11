@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+</head>
+<body>
+
+<!-- 2.在view，模板层创建一个模板 -->
+<div id="vue">
+
+    <my-component v-for="item in items" v-bind:clarity="item"></my-component>
+
+</div>
+
+<!-- 1.导入Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<!-- 3.创建一个Vue实例，并将数据绑定到页面元素 -->
+<script>
+
+    /* 首先我们应该创建一个组件 */
+    Vue.component("my-component", {
+        // props 传递参数，使其与 vm 对象中的熟悉间接关联
+        props: ['clarity'],
+        // 定义模板
+        template: '<li>{{clarity}}</li>'
+    });
+
+    var vm = new Vue({
+        el: "#vue",
+        data: {
+            items: ["java", "linux", "vue"]
+        }
+    });
+</script>
+
+</body>
+</html>

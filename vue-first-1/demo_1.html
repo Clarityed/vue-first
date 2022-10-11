@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个Vue程序</title>
+</head>
+<body>
+
+<!-- 2.在view，模板层创建一个模板 -->
+<div id="vue">
+    {{message}}
+</div>
+
+<!-- 1.导入Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<!-- 3.创建一个Vue实例，并将数据绑定到页面元素 -->
+<script>
+    var vm = new Vue({
+        el: "#vue",
+        data: {
+            message: "hello vue!"
+        }
+    });
+</script>
+
+</body>
+</html>

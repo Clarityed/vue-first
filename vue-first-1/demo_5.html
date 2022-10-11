@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单双向数据绑定</title>
+</head>
+<body>
+
+<!-- 2.在view，模板层创建一个模板 -->
+<div id="vue">
+
+  文本框：<input type="text" v-model="message">
+  <p>{{message}}</p>
+  多行文本框：<textarea v-model="textarea"></textarea>
+  <p>{{textarea}}</p>
+  单选框：
+  <input type="radio" value="男" v-model="checked" name="sex"> 男
+  <input type="radio" value="女" v-model="checked" name="sex"> 女
+  <p>{{checked}}</p>
+  下拉框：
+  <select v-model="selected">
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+    <option>D</option>
+  </select>
+  <p>{{selected}}</p>
+  下拉框：
+  <select v-model="selected_1">
+    <option value="" disabled>---请选择---</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+    <option>D</option>
+  </select>
+  <p>{{selected_1}}</p>
+
+</div>
+
+<!-- 1.导入Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<!-- 3.创建一个Vue实例，并将数据绑定到页面元素 -->
+<script>
+  var vm = new Vue({
+    el: "#vue",
+    data: {
+      message: "hello vue!",
+      textarea: "多行文本框",
+      checked: '男',
+      selected: 'A',
+      selected_1: ''
+    },
+  });
+</script>
+
+</body>
+</html>

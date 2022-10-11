@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础语法指令</title>
+</head>
+<body>
+
+<!-- 2.在view，模板层创建一个模板 -->
+<div id="vue">
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>No</h1>
+    <h2 v-if="message==='A'">A</h2>
+    <h2 v-else-if="message==='B'">B</h2>
+    <h2 v-else>C</h2>
+    <!-- v-for -->
+    <li v-for="(item,index) in items">
+        {{item.message}}--{{index}}
+    </li>
+</div>
+
+<!-- 1.导入Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<!-- 3.创建一个Vue实例，并将数据绑定到页面元素 -->
+<script>
+    var vm = new Vue({
+        el: "#vue",
+        data: {
+            ok: true,
+            message: "A",
+            items: [
+                {message: "Vue"},
+                {message: "keQing"},
+                {message: "ALISIYA"}
+            ]
+        }
+    });
+</script>
+
+</body>
+</html>
